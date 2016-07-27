@@ -19,6 +19,7 @@ function generateMap(x){
 
 function drawMap(theMap, size){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  population = 0;
 
   cellSize = 500 / size;
 
@@ -29,12 +30,17 @@ function drawMap(theMap, size){
       }
       else if (theMap[i][j] == 1) {
         ctx.fillRect(i*cellSize,j*cellSize,cellSize,cellSize);
+        population += 1;
       }
     }
   }
   document.getElementById('numGen').innerHTML = "Generation: " + generation;
-  document.getElementById("numPop").innerHTML = population;
+  document.getElementById("numPop").innerHTML = "population: " + population;
 }
+
+document.querySelector("GOL").addEventListener("click", function (event) {
+  document.querySelector("output").textContent = event.clientX + ", " + event.clientY;
+});
 /*
 function click(canvas, event) {
     var rect = canvas.getBoundingClientRect();
