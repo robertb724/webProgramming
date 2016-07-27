@@ -93,7 +93,7 @@ function nextGenBtn(){
   drawMap(theMap, gameSize);
 }
 function nextGen23(){
-  for (var i = 0; i < 24; i++) {
+  for (var i = 0; i < 23; i++) {
     nextGen(theMap);
     drawMap(theMap, gameSize);
   }
